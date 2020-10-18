@@ -9,15 +9,33 @@
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  执行`mvn install`本地安装
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  在需要插桩的应用中配置该plugin即可
+
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.example</groupId>
+            <artifactId>my-maven-plugin</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <configuration>
+                <output>${project.build.directory}</output>
+            </configuration>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>touch</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+```
 
 #### 参与贡献
 
