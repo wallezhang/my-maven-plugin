@@ -3,6 +3,8 @@
 #### 介绍
 自定义maven plugin，实现用asm在编译期进行字节码插桩
 
+在每一个方法入口处增加一段代码：`System.out.println("method enter");`
+
 #### 软件架构
 软件架构说明
 
