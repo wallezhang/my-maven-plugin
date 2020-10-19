@@ -15,6 +15,13 @@ public class MethodCoverageMethodVisitor extends MethodVisitor {
     }
 
     @Override
+    public void visitMethodInsn(int opcode, String owner, String name, String descriptor, boolean isInterface) {
+        super.visitMethodInsn(opcode, owner, name, descriptor, isInterface);
+        System.out.printf("opcode:%s,owner:%s,name:%s,desc:%s,inInterface:%b\n", opcode, owner, name, descriptor,
+                isInterface);
+    }
+
+    @Override
     public void visitCode() {
         mv.visitFieldInsn(GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
         mv.visitLdcInsn("method enter");
